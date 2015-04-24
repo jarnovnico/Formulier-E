@@ -4,6 +4,354 @@ html {
 }
 
 body {
-  font-family: $bodyFont;
+  font-family: $bodyfont;
   color: black;
+}
+
+.jobs-form__jobs,
+.jobs-form__notice,
+.jobs-form__finishing {
+  display: none;
+}
+
+.active {
+  display: block;
+}
+
+.form-container {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  height: auto;
+
+  @include breakpoint( $break-tablet) {
+    width: 700px;
+    margin: 0 auto;
+  }
+
+  @include breakpoint( $break-desktop-small) {
+    width: 900px;
+  }
+}
+
+.form-indicator {
+  & {
+    margin: 0;
+    height: auto;
+    padding: 12px;
+    background-color: $buttonOrange;
+    overflow: hidden;
+
+    @include breakpoint( $break-phone) {
+      padding: 32px;
+    }
+  }
+
+  &__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  &__title {
+    color: rgba(255,255,255, 0.6);
+    font-size: 12px;
+    text-transform: uppercase;
+    width: 100%;
+
+    @include breakpoint( $break-phone) {
+      display: inline-block;
+      @include span(1 of 4);
+    }    
+
+    &--active {
+      color: white;
+      font-weight: bold;
+      font-size: 12px;
+
+      @include breakpoint( $break-tablet) {
+        font-size: 14px;
+      }
+      
+      @include breakpoint( $break-desktop-small) {
+        font-size: 18px;
+      }
+    }
+
+    &:nth-child(2n) {
+     
+     @include breakpoint( $break-phone) {
+        text-align: center;
+      }
+    }
+
+    &:nth-child(3n) {
+      
+      @include breakpoint( $break-phone) {
+        text-align: center;
+      }
+    }
+
+    &:nth-child(4n) {
+     
+      @include breakpoint( $break-phone) {
+        @include omega;
+        text-align: right;
+      }
+    }
+  }
+}
+
+.jobs-form {
+
+  & {
+    height: auto;
+    clear: both;
+    float: left;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f5f6;
+  }
+
+  &__input-wrap {
+    float: left;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+
+    &--small-wrap {
+      width: 100%;
+
+      @include breakpoint( $break-tablet) {
+        width: 100px;
+      }
+    }
+
+    @include breakpoint( $break-phone) {
+      line-height: 48px;
+      width: 250px;
+    }
+
+    @include breakpoint( $break-tablet) {
+      width: 300px;
+    }
+
+    @include breakpoint( $break-desktop-small) {
+      width: 500px;
+    }
+  }
+  
+  &__text {
+
+  }
+
+  &__input-wrap-tiny {
+    float: left;
+    line-height: 48px;
+    padding-right: 8px;
+  }
+
+  &__input {
+
+    & {
+      width: 100%;
+      // border: none;
+      padding: 4px 6px;
+
+      &.error {
+        border: 1px solid red;
+      }
+
+      @include breakpoint( $break-tablet) {
+        width: auto;
+      }
+    }
+
+    &--description {
+      width: 100%;
+      height: 100px;
+      margin-top: 18px;
+
+      @include breakpoint( $break-phone) {
+        line-height: 18px;
+      }
+
+      @include breakpoint( $break-tablet) {
+        width: 300px;
+      }
+
+      &.error {
+        border: 1px solid red;
+      }
+    }
+
+    &--input-price {
+      display: inline-block;
+      width: 20px;
+    }
+
+    &--file {
+      margin-top: 14px;
+      color: #605E63;
+      font-size: 14px;
+
+      @include breakpoint( $break-tablet) {
+        width: 300px;
+      }
+    }
+
+    &--dropdown {
+      width: 100%;
+
+      @include breakpoint( $break-tablet) {
+        width: 100%;
+        display: inline-block;
+      }
+
+      @include breakpoint( $break-desktop-small) {
+        width: 130px;
+      }
+    }
+
+    &--place {
+      width: 210px;
+    }
+
+    &--firstname {
+      width: 100%;
+      margin-bottom: 12px;
+
+      @include breakpoint( $break-phone) {
+        width: 100px;
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__subtitle {
+    display: inline-block;
+    width: auto;
+
+    @include breakpoint( $break-desktop-small) {
+      width: 30%;
+    }
+  }
+
+  &__price {
+    display: inline-block;
+    padding-left: 8px;
+  }
+
+  fieldset:nth-child(even) {
+    background-color: #eaebec;
+  }
+
+  fieldset:last-of-type {
+    border-bottom: 1px solid #eaebec;
+  }
+
+  &__set {
+    border: none;
+    margin: 0;
+    height: auto;
+
+    @include breakpoint( $break-phone) {
+      padding: 0 0 0 32px;
+    }
+
+    @include breakpoint( $break-desktop-small) {
+      height: 48px;
+    }
+
+    &--job_description {
+      height: auto;
+    }
+  }
+
+  &__title {
+    float: left;
+    width: 100%;
+    color: #605E63;
+    font-weight: bold;
+    margin-top: 12px;
+    margin-bottom: 12px;
+
+    @include breakpoint( $break-phone) {
+      width: 230px;
+      line-height: 48px;
+      margin: 0;
+    }
+
+    @include breakpoint( $break-desktop-small) {
+      width: 350px;
+    }
+
+    &--large {
+      width: 100%;
+      padding: 0;
+
+      @include breakpoint( $break-phone) {
+        width: 300px;
+      }
+    }
+  }
+
+  label {
+    color: #605E63;
+
+    @include breakpoint( $break-phone) {
+      line-height: 48px;
+    }
+  }
+
+  label.error {
+    color: red;
+    font-size: 12px;
+    padding: 0;
+    margin: 0;
+    line-height: 48px;
+    width: 100%;
+
+    @include breakpoint( $break-tablet) {
+      padding-left: 8px;
+      line-height: 48px;
+      width: auto;
+    }
+  }
+}
+
+.form__button {
+
+  & {
+    text-decoration: none;
+    background-color: $buttonOrange;
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 12px;
+    margin: 12px;
+    
+
+    @include breakpoint( $break-phone) {
+      margin: 32px;
+    }
+  }
+
+  &--next {
+    float: right;
+    padding: 12px 24px;
+  }
+  
+  &--next:hover {
+    background-color: darken( $buttonOrange, 10%);
+  }
+
+  &--prev {
+    float: left;
+    padding: 12px 24px;
+  }
+  &--prev:hover {
+    background-color: darken( $buttonOrange, 10%);
+  }
 }

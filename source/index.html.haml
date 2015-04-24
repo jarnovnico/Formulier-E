@@ -1,5 +1,167 @@
 ---
-title:     Middleman template
+title:     Emerce Forms
 bodyclass: home
 ---
 
+.form-container
+
+	.form-indicator
+		%ul.form-indicator__list
+			%li.form-indicator__title.form-indicator__title--active 1. Omschrijving
+			%li.form-indicator__title 2. Vacature
+			%li.form-indicator__title 3. Opvallen
+			%li.form-indicator__title 4. Afronden
+
+	%form.jobs-form
+
+		.jobs-form__description
+			%fieldset.jobs-form__set
+				%legend.jobs-form__title Vacature titel
+				.jobs-form__input-wrap
+					%input.jobs-form__input{:type => "text", :placeholder => "Vacature titel", :name => "jobs_name", :required => "true"}
+			%fieldset.jobs-form__set
+				%legend.jobs-form__title Bedrijf
+				.jobs-form__input-wrap
+					%input.jobs-form__input{:type => "text", :placeholder => "Bedrijfsnaam", :name => "company_name", :required => "true"}
+			%fieldset.jobs-form__set
+				%legend.jobs-form__title Logo
+				.jobs-form__input-wrap
+					%input.jobs-form__input.jobs-form__input--file{:type => "file", :name => "job_logo"}
+			%fieldset.jobs-form__set.jobs-form__set--job_description
+				%legend.jobs-form__title Vacature Tekst
+				.jobs-form__input-wrap
+					%textarea.jobs-form__input.jobs-form__input--description{:type => "text-area", :placeholder => "Schrijf hier uw vacature omschrijving", :name => "job_description", :required => "true"}
+			%a.form__button.form__button--next{:href => "#"} Naar stap 2
+
+		.jobs-form__jobs
+			%fieldset.jobs-form__set 
+				%legend.jobs-form__title Plaats
+				.jobs-form__input-wrap
+					%input.jobs-form__input.jobs-form__input--place{:type => "text", :placeholder => "Uw woonplaats", :name => "home_town", :required => "true"}
+			%fieldset.jobs-form__set 
+				%legend.jobs-form__title Provincie
+				.jobs-form__input-wrap
+					%label.jobs-form__subtitle Kies provincie
+					%select.jobs-form__input.jobs-form__input--dropdown{:name => "state_input", :required => "true"}
+						%option{:value => ""} Selecteer
+						%option{:value => "drenthe"} Drenthe
+						%option{:value => "flevoland"} Flevoland
+						%option{:value => "friesland"} Friesland
+						%option{:value => "gelderland"} Gelderland
+						%option{:value => "groningen"} Groningen
+						%option{:value => "limburg"} Limburg
+						%option{:value => "noord-Brabant"} Noord-Brabant
+						%option{:value => "noord-Holland"} Noord-Holland
+						%option{:value => "overijssel"} Overijssel
+						%option{:value => "utrecht"} Utrecht
+						%option{:value => "zeeland"} Zeeland
+						%option{:value => "zuid-Holland"} Zuid-Holland
+			%fieldset.jobs-form__set 
+				%legend.jobs-form__title Opleidingsniveau
+				.jobs-form__input-wrap
+					%label.jobs-form__subtitle Kies niveau
+					%select.jobs-form__input.jobs-form__input--dropdown{:name => "education_input", :required => "true"}
+						%option{:value => ""} Selecteer
+						%option{:value => "mbo-1"} MBO niv. 1
+						%option{:value => "mbo-2"} MBO niv. 2
+						%option{:value => "mbo-3"} MBO niv. 3
+						%option{:value => "mbo-4"} MBO niv. 4
+						%option{:value => "hbo"} HBO
+						%option{:value => "wo"} WO
+			%fieldset.jobs-form__set
+				%legend.jobs-form__title Branche
+				.jobs-form__input-wrap
+					%label.jobs-form__subtitle Kies branche
+					%select.jobs-form__input.jobs-form__input--dropdown{:name => "line_of_work_input", :required => "true"}
+						%option{:value => ""} Selecteer
+						%option{:value => "option-1"} Keuze 1
+						%option{:value => "option-2"} Keuze 2
+						%option{:value => "option-3"} Keuze 3
+			%fieldset.jobs-form__set
+				%legend.jobs-form__title Functiegroep
+				.jobs-form__input-wrap
+					%label.jobs-form__subtitle Kies functie
+					%select.jobs-form__input.jobs-form__input--dropdown{:name => "function_group_input", :required => "true"}
+						%option{:value => ""} Selecteer
+						%option{:value => "option-1"} Keuze 1
+						%option{:value => "option-2"} Keuze 2
+						%option{:value => "option-3"} Keuze 3
+			%fieldset.jobs-form__set
+				%legend.jobs-form__title Carriere niveau
+				.jobs-form__input-wrap
+					%label.jobs-form__subtitle Kies niveau
+					%select.jobs-form__input.jobs-form__input--dropdown{:name => "career_level_input", :required => "true"}
+						%option{:value => ""} Selecteer
+						%option{:value => "option-1"} Keuze 1
+						%option{:value => "option-2"} Keuze 2
+						%option{:value => "option-3"} Keuze 3
+			%fieldset.jobs-form__set
+				%legend.jobs-form__title Uren
+				.jobs-form__input-wrap
+					%label.jobs-form__subtitle Kies uren
+					%select.jobs-form__input.jobs-form__input--dropdown{:name => "hours_input", :required => "true"}
+						%option{:value => ""} Selecteer
+						%option{:value => "option-1"} Keuze 1
+						%option{:value => "option-2"} Keuze 2
+						%option{:value => "option-3"} Keuze 3
+			%a.form__button.form__button--prev{:href => "#"} Vorige
+			%a.form__button.form__button--next{:href => "#"} Naar stap 3
+
+		.jobs-form__notice
+			%fieldset.jobs-form__set
+				%label.jobs-form__text Met deze opties brengt uw uw vacatures nog beter onder de aandacht.
+			%fieldset.jobs-form__set
+				%legend.jobs-form__title.jobs-form__title--large Top Job op emerce.nl
+				.jobs-form__input-wrap.jobs-form__input-wrap--small-wrap
+					%input.jobs-form__input.jobs-form__input--input-price{:type => "checkbox", :id => "option_one", :name => "option_one"}
+					%label.jobs-form__price{:for => "option_one"} €249 pw
+			%fieldset.jobs-form__set
+				%legend.jobs-form__title.jobs-form__title--large Job van de Week - Emerce Nieuwsbrief
+				.jobs-form__input-wrap.jobs-form__input-wrap--small-wrap
+					%input.jobs-form__input.jobs-form__input--input-price{:type => "checkbox", :id => "option_two", :name => "option_two"}
+					%label.jobs-form__price{:for => "option_two"} €249 pw
+			%fieldset.jobs-form__set
+				%legend.jobs-form__title.jobs-form__title--large Doorplaatsing naar LinkedIn Emerce
+				.jobs-form__input-wrap.jobs-form__input-wrap--small-wrap
+					%input.jobs-form__input.jobs-form__input--input-price{:type => "checkbox", :id => "option_three", :name => "option_three"}
+					%label.jobs-form__price{:for => "option_three"} €49 pw
+			%fieldset.jobs-form__set
+				%legend.jobs-form__title.jobs-form__title--large Job delen via Twitter @Emerce
+				.jobs-form__input-wrap.jobs-form__input-wrap--small-wrap
+					%input.jobs-form__input.jobs-form__input--input-price{:type => "checkbox", :id => "option_four", :name => "option_four"}
+					%label.jobs-form__price{:for => "option_four"} €49
+			%fieldset.jobs-form__set
+				.jobs-form__input-wrap-tiny
+					%input.jobs-form__input.jobs-form__input--input-price{:type => "checkbox", :id => "extra_option", :name => "extra_option"}
+				%label{:for => "extra_option"} Neem contact met mij voor aangepaste mogelijkheden
+			%a.form__button.form__button--prev{:href => "#"} Vorige
+			%a.form__button.form__button--next{:href => "#"} Naar stap 4
+
+		.jobs-form__finishing
+			%fieldset.jobs-form__set
+				%legend.jobs-form__title Organisatie
+				.jobs-form__input-wrap
+					%input.jobs-form__input{:type => "text", :placeholder => "Uw huidige organisatie", :name => "organisation", :required => "true"}
+			%fieldset.jobs-form__set
+				%legend.jobs-form__title Contactpersoon
+				.jobs-form__input-wrap
+					%input.jobs-form__input.jobs-form__input--firstname{:type => "text", :placeholder => "Voornaam", :name => "contact_firstname", :required => "true"}
+					%input.jobs-form__input{:type => "text", :placeholder => "Achternaam", :name => "contact_lastname", :required => "true"}
+			%fieldset.jobs-form__set
+				%legend.jobs-form__title Telefoonnummer
+				.jobs-form__input-wrap
+					%input.jobs-form__input{:type => "text", :placeholder => "Uw 06- of huis-nummer hier", :name => "phone_number", :required => "true"}
+			%fieldset.jobs-form__set
+				%legend.jobs-form__title Email
+				.jobs-form__input-wrap
+					%input.jobs-form__input{:type => "email", :placeholder => "voorbeeld@info.nl", :name => "email", :required => "true"}
+			%fieldset.jobs-form__set
+				%legend.jobs-form__title Factuur informatie
+				.jobs-form__input-wrap
+					%input.jobs-form__input{:type => "text", :placeholder => "Overige informatie hier", :name => "bla", :required => "true"}
+			%fieldset.jobs-form__set
+				.jobs-form__input-wrap-tiny
+					%input.jobs-form__input.jobs-form__input--input-price{:type => "checkbox", :name => "send"}
+				%label.jobs-form__text Stuur mij een kopie van deze vacature
+			%a.form__button.form__button--prev{:href => "#"} Vorige
+			%a.form__button.form__button--next{:href => "#"} Plaats mijn vacature

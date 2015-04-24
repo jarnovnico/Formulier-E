@@ -1,12 +1,4 @@
-// Baseline, measured in pixels
-// The value should be the same as the font-size value for the html element
-// If the html element's font-size is set to 62.5% (of the browser's default font-size of 16px),
-// then the variable below would be 10px.
-// Used for the rem-calc mixin found in mixins/rem-calc.scss
-$baseline-px: 16px;
+$bodyfont:                  "open sans", helvetica, sans-serif;
+$headerFont:                "oxygen", "open sans", helvetica, sans-serif;
 
-$bodyFont: "Helvetica Neue", Helvetica, Arial, sans-serif;
-$headerFont:  "Helvetica Neue", Helvetica, Arial, sans-serif;
-
-$bodyFontWeight: 400;
-$headerfontWeight: 700;
+$headerFontWeight:           700;
